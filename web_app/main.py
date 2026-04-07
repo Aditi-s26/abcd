@@ -1,7 +1,5 @@
 from flask import Flask, render_template
-
 app = Flask(__name__)
-
 @app.route('/')
 def home():  # Changed semicolon (;) to a colon (:)
     # render_template automatically looks in the /templates folder
