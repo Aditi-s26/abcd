@@ -3,42 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Awesome Website</title>
-    <link rel="stylesheet" href="style.css">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
-    <header>
+    <header class="navbar">
+        <div class="logo">DevStream</div>
         <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+            <a href="/">Home</a>
+            <a href="/projects">Projects</a>
+            <a href="/contact">Contact</a>
         </nav>
     </header>
 
-    <main>
-        <section id="hero">
-            <h1>Welcome to My Website</h1>
-            <p>This is a clean, semantic HTML5 starting point.</p>
-            <button>Get Started</button>
+    <main class="container">
+        <section class="banner">
+            <h1>Creative Solutions for Modern Problems</h1>
+            <p>Built with Flask and pure passion.</p>
+            <div class="cta-group">
+                <a href="#explore" class="btn-primary">Explore Work</a>
+                <a href="#" class="btn-secondary">Learn More</a>
+            </div>
         </section>
 
-        <section id="features">
-            <h2>Our Features</h2>
-            <article>
-                <h3>Feature One</h3>
-                <p>Details about something cool you do.</p>
-            </article>
+        <section id="explore" class="grid">
+            <div class="card">
+                <div class="icon">🚀</div>
+                <h3>Fast Performance</h3>
+                <p>Optimized for speed and accessibility from the ground up.</p>
+            </div>
+            <div class="card">
+                <div class="icon">🎨</div>
+                <h3>Custom Design</h3>
+                <p>Tailored layouts that reflect your unique brand identity.</p>
+            </div>
+            <div class="card">
+                <div class="icon">📱</div>
+                <h3>Responsive</h3>
+                <p>Looks stunning on desktops, tablets, and smartphones.</p>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 My Brand. All rights reserved.</p>
+    <footer class="footer">
+        <p>Built by a Human. Powered by {{ title }}.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>
