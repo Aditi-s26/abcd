@@ -1,2 +1,2 @@
 runtime:python39
-entrypoint:gunicoin-b:$port main:app
+entrypoint: gunicorn-b:$PORT main:app
