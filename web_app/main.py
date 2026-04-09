@@ -4,10 +4,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    # render_template automatically looks in the /templates folder
+    # Looks for /templates/index.html
     return render_template('index.html', title="Home Page")
 
 if __name__ == '__main__':
-    # Local development server
-    # debug=True allows the server to reload when you make changes
-    app.run(host='127.0.0.1', port=8080, debug=True)
+    # Local execution
+    app.run(host='0.0.0.0', port=8080, debug=True)
