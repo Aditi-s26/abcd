@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=null">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             background-color: #f4f4f9;
             color: #333;
             display: flex;
@@ -19,14 +19,30 @@
             text-align: center;
             background: white;
             padding: 3rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
         }
-        h1 { color: #4a90e2; }
-        p { font-size: 1.1rem; }
+        /* Added a nice hover effect */
+        .container:hover {
+            transform: translateY(-5px);
+        }
+        h1 { 
+            color: #4a90e2; 
+            margin-bottom: 0.5rem;
+        }
+        p { 
+            font-size: 1.1rem; 
+            color: #666;
+        }
         .status {
             color: #27ae60;
             font-weight: bold;
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
     </style>
 </head>
@@ -34,7 +50,9 @@
     <div class="container">
         <h1>Welcome to {{ title }}</h1>
         <p>If you are seeing this, your Flask app is officially working!</p>
-        <p class="status">✔ Template successfully loaded.</p>
+        <div class="status">
+            <span>✔</span> Template successfully loaded
+        </div>
     </div>
 </body>
 </html>
